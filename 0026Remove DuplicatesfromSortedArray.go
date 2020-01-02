@@ -1,3 +1,6 @@
+package main
+
+
 func removeDuplicates(nums []int) int {
     //corner case
     if nums == nil || len(nums) == 0{

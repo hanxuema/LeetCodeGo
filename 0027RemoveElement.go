@@ -1,3 +1,5 @@
+package main
+
 func removeElement(nums []int, val int) int {
     //corner case
     if nums == nil || len(nums) == 0{
