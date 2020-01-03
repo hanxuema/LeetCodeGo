@@ -20,3 +20,28 @@ func findPairs(nums []int, k int) int {
 	}
 	return res
 }
+
+
+func findPairs222(nums []int, k int) int {
+    res := make(map[int]bool)
+    if nums == nil || len(nums) <= 1{
+        return 0
+    }
+    
+    set := make(map[int]int)
+    for i := 0; i < len(nums); i++ {
+        set[nums[i]] = set[nums[i]] + 1
+    }
+    for i := 0; i < len(nums); i++ {
+        temp := nums[i] + k
+        val, ok := set[temp]
+        if ok && val > 0 {
+            _, ok2 := res[temp]
+                if !ok2 {
+                    res[temp] = true
+                    set[temp] = set[temp] - 1
+                } 
+        }
+    }
+    return len(res)
+}
