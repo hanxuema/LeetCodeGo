@@ -10,6 +10,9 @@ func main() {
 	// T := "aaa"
 	// res := backspaceCompare(S,T)
 	// print(res)
-	A := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	longestMountain(A)
+	// A := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	// longestMountain(A)
+	A := []int{1,1,2,2,2,2}
+	target := 5
+	threeSumMulti(A, target)
 }

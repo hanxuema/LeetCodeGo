@@ -12,7 +12,7 @@ func numRescueBoats(people []int, limit int) int {
 			sum = people[left]
 		}
 		if sum <= limit {
-			left+=
+			left++
 		}
 		right--
 		res++
