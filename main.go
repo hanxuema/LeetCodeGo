@@ -15,9 +15,11 @@ func main() {
 	// A := []int{1,1,2,2,2,2}
 	// target := 5
 	// threeSumMulti(A, target)
-	arr := []int{1, 2, 3, 3, 4, 4, 5}
+	
+	// deleteDuplicates2(head)
+	arr := []int{1, 2, 3, 4, 5}
 	head := convertArrayToHead(arr)
-	deleteDuplicates2(head)
+	rotateRight(head, 2)
 }
 
 func convertArrayToHead(arr []int) *ListNode {

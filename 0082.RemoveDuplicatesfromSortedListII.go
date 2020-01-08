@@ -1,6 +1,6 @@
 package main
 
-func deleteDuplicates(head *ListNode) *ListNode {
+func deleteDuplicates2(head *ListNode) *ListNode {
 	pre := &ListNode{-1, nil}
 	cur := pre
 	pre.Next = head
