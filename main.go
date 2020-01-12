@@ -17,11 +17,14 @@ func main() {
 	// threeSumMulti(A, target)
 	
 	// deleteDuplicates2(head)
-	arr := []int{1,4,3,2,5,2}
+	arr := []int{1,2}
 	head := convertArrayToHead(arr)
 	// rotateRight(head, 2)
 
-	partition(head, 3)
+	// partition(head, 3)
+	// reorderList(head)
+	// reverseBetween2(head, 1, 5)
+	isPalindrome(head)
 }
 
 func convertArrayToHead(arr []int) *ListNode {
