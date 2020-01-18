@@ -27,6 +27,9 @@ func main() {
 	// isPalindrome(head)
 	// oddEvenList(head)
 	reorderList(head)
+	intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
+	newInterval := []int{4,8}
+	insert(intervals, newInterval)
 }
 
 func convertArrayToHead(arr []int) *ListNode {
