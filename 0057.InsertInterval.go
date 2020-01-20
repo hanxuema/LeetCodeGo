@@ -3,33 +3,36 @@ package main
 func insert(intervals [][]int, newInterval []int) [][]int {
 	res := make([][]int, 0)
 	if intervals == nil || len(intervals) == 0 {
+		res = append(res, newInterval) //[] [5,7]
 		return res
 	}
-
-	length := len(intervals)
-	newStart := newInterval[0]
-	newEnd := newInterval[1]
-	for i := 0; i < length; i++ {
-		if intervals[i][1] < newStart || intervals[i][0] > newEnd {
+	start, end := newInterval[0], newInterval[1]
+	newIntervalUsed := false
+	for i := 0; i < len(intervals); i++ {
+		curStart := intervals[i][0]
+		curEnd := intervals[i][1]
+		if curEnd < start {
+			res = append(res, intervals[i])
+		} else if curStart > end {
+			if !newIntervalUsed {
+				temp := []int{start, end}
+				res = append(res, temp)
+				newIntervalUsed = true
+			}
 			res = append(res, intervals[i])
 		} else {
-			intervals[i][1] = max(intervals[i][1], newEnd)
-			for k := i + 1; k < length; k++ {
-				if intervals[k][0] > intervals[i][1] {
-					res = append(res, intervals[i])
-					i = k + 1
-					break
-				}
-				if k == length-1 {
-					intervals[i][1] = max(intervals[i][1], intervals[k][1])
-					res = append(res, intervals[i])
-					break
-				}
-
+			start = min(start, intervals[i][0])
+			end = max(end, intervals[i][1])
+			if i == len(intervals)-1 { //  [[0,2],[3,9]]     [6,8]
+				temp := []int{start, end}
+				res = append(res, temp)
 			}
 		}
 	}
-
+	if start > intervals[len(intervals)-1][1] || len(res) == 0 { //[[3,5],[17,19]]   [4,18]
+		temp := []int{start, end}
+		res = append(res, temp)
+	}
 	return res
 }
 
@@ -40,3 +43,13 @@ func max(a, b int) int {
 		return b
 	}
 }
+func min(a, b int) int {
+	if a < b {
+		return a
+	} else {
+		return b
+	}
+}
+
+//       [3,             10]
+//[[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
