@@ -3,38 +3,43 @@ package main
 func insert(intervals [][]int, newInterval []int) [][]int {
 	res := make([][]int, 0)
 	if intervals == nil || len(intervals) == 0 {
+		res = append(res, newInterval)
 		return res
 	}
 
-	length := len(intervals)
-	newStart := newInterval[0]
-	newEnd := newInterval[1]
-	for i := 0; i < length; i++ {
-		if intervals[i][1] < newStart || intervals[i][0] > newEnd {
-			res = append(res, intervals[i])
+	start, end := newInterval[0], newInterval[1]
+	left, right := make([][]int, 0), make([][]int, 0)
+	for i := 0; i < len(intervals); i++ {
+		curStart, curEnd := intervals[i][0], intervals[i][1]
+		if curEnd < start {
+			left = append(left, intervals[i])
+		} else if curStart > end {
+			right = append(right, intervals[i])
 		} else {
-			intervals[i][1] = max(intervals[i][1], newEnd)
-			for k := i + 1; k < length; k++ {
-				if intervals[k][0] > intervals[i][1] {
-					res = append(res, intervals[i])
-					i = k + 1
-					break
-				}
-				if k == length-1 {
-					intervals[i][1] = max(intervals[i][1], intervals[k][1])
-					res = append(res, intervals[i])
-					break
-				}
+			start = min(start, curStart)
+			end = max(end, curEnd)
 
-			}
 		}
 	}
 
+	res = append(res, left...)
+
+	temp := []int{start, end}
+	res = append(res, temp)
+	res = append(res, right...)
 	return res
 }
 
 func max(a, b int) int {
 	if a > b {
+		return a
+	} else {
+		return b
+	}
+}
+
+func min(a, b int) int {
+	if a < b {
 		return a
 	} else {
 		return b
