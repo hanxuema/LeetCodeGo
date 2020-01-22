@@ -21,12 +21,12 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 	return false
 }
 
-func abs(val int) int {
-	if val < 0 {
-		val = 0 - val
-	}
-	return val
-}
+// func abs(val int) int {
+// 	if val < 0 {
+// 		val = 0 - val
+// 	}
+// 	return val
+// }
 
 // [1,2,3,5,6,7,1,1]
 // 3

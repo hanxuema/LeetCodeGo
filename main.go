@@ -17,7 +17,7 @@ func main() {
 	// threeSumMulti(A, target)
 	
 	// deleteDuplicates2(head)
-	arr := []int{1,2,3,4,5}
+	arr := []int{4,2,1,3}
 	head := convertArrayToHead(arr)
 	// rotateRight(head, 2)
 
@@ -26,10 +26,11 @@ func main() {
 	// reverseBetween2(head, 1, 5)
 	// isPalindrome(head)
 	// oddEvenList(head)
-	reorderList(head)
-	intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
-	newInterval := []int{4,8}
-	insert(intervals, newInterval)
+	insertionSortList(head)
+	// reorderList(head)
+	// intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
+	// newInterval := []int{4,8}
+	// insert(intervals, newInterval)
 }
 
 func convertArrayToHead(arr []int) *ListNode {
