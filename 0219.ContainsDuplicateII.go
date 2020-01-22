@@ -13,7 +13,6 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 			} else {
 				m[nums[i]] = i
 			}
-
 		} else {
 			m[nums[i]] = i
 		}
