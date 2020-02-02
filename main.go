@@ -31,9 +31,11 @@ func main() {
 	// intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
 	// newInterval := []int{4,8}
 	// insert(intervals, newInterval)
-	nums := []int{5,1, 3}
-	target := 1
-	search(nums, target)
+	nums := []int{5,7}
+	target := 3
+	//search(nums, target)
+	//searchRange(nums,target)
+	bsearch(nums, target)
 }
 
 func convertArrayToHead(arr []int) *ListNode {

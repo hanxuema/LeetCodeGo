@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func bsearch(nums []int, target int) int {
     if nums == nil || len(nums) == 0 {
         return -1
@@ -15,5 +19,10 @@ func bsearch(nums []int, target int) int {
             right = mid - 1
         }
     }
+    fmt.Printf("left %d\n", left)
+    fmt.Printf("right %d\n", right)
+
+    // fmt.Printf("nums left %d\n", nums[left])
+    // fmt.Printf("nums right %d\n", nums[right])
     return -1
 }
