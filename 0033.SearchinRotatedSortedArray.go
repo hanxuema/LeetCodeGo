@@ -1,6 +1,5 @@
 package main
 
-
 func search(nums []int, target int) int {
     if nums == nil || len(nums) == 0{
         return -1
