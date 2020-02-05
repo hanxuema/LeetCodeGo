@@ -15,9 +15,9 @@ func main() {
 	// A := []int{1,1,2,2,2,2}
 	// target := 5
 	// threeSumMulti(A, target)
-	
+
 	// deleteDuplicates2(head)
-	arr := []int{4,2,1,3}
+	arr := []int{4, 2, 1, 3}
 	head := convertArrayToHead(arr)
 	// rotateRight(head, 2)
 
@@ -31,11 +31,13 @@ func main() {
 	// intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
 	// newInterval := []int{4,8}
 	// insert(intervals, newInterval)
-	nums := []int{5,7}
-	target := 3
-	//search(nums, target)
-	//searchRange(nums,target)
-	bsearch(nums, target)
+	nums := []int{3, 2, 3}
+	// target := 3
+	// //search(nums, target)
+	// //searchRange(nums,target)
+	// bsearch(nums, target)
+
+	majorityElement(nums)
 }
 
 func convertArrayToHead(arr []int) *ListNode {
