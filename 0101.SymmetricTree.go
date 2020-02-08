@@ -43,6 +43,23 @@ func isSymmetricIterative(root *TreeNode) bool {
     return true
 }
 
+func isSymmetricRecursively(root *TreeNode) bool {
+    if root == nil {
+        return true
+    }
+    return checkSymmetric(root.Left, root.Right)
+}
+
+func checkSymmetric(left, right *TreeNode) bool{
+    if left == nil && right == nil { 
+        return true
+    }
+    if (left == nil || right == nil) || (left.Val != right.Val) {
+        return false
+    }
+    return checkSymmetric(left.Left, right.Right) && checkSymmetric(left.Right,right.Left)
+}
+
 
 // [1,2,2,3,4,4,3]
 // [1,2,2,3,4,4,3]
