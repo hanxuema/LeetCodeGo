@@ -4,7 +4,7 @@ func buildTree106(inorder []int, postorder []int) *TreeNode {
 	return buildTreeHelper(inorder, postorder)
 }
 
-func buildTreeHelper(inorder []int, postorder []int) *TreeNode {
+func buildTreeHelper106(inorder []int, postorder []int) *TreeNode {
 	if len(inorder) == 0 || len(postorder) == 0 {
 		return nil
 	}
