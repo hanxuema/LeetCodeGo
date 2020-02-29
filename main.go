@@ -1,5 +1,10 @@
 package main
-
+ 
+type TreeNode struct {
+	     Val int
+     Left *TreeNode
+	     Right *TreeNode
+ }
 func main() {
 	// 	[0,1,2]
 	// 0
@@ -36,8 +41,33 @@ func main() {
 	// //search(nums, target)
 	// //searchRange(nums,target)
 	// bsearch(nums, target)
-
 	majorityElement(nums)
+ 
+	treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4} 
+	tree := convertArrayToTree(treeArray)
+	isBalanced(tree)
+}
+
+func convertArrayToTree(arr []int) *TreeNode{
+	// [1,2,2,3,null,null,3,4,null,null,4]
+	root := TreeNode{}
+	root.Val = arr[0]
+	root.Left = convertToTreeHelper(arr, 1)
+	root.Right = convertToTreeHelper(arr, 2)
+
+	return &root
+}
+
+func convertToTreeHelper(arr []int, index int) *TreeNode{
+	if 	index > len(arr) - 1 || arr[index] == -1{
+		return nil
+	}
+	root := TreeNode{}
+	root.Val = arr[index]
+	root.Left = convertToTreeHelper(arr,index *2 +1 )
+	root.Right = convertToTreeHelper(arr, index *2 +2)
+
+	return &root
 }
 
 func convertArrayToHead(arr []int) *ListNode {
