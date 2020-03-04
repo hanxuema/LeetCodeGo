@@ -1,22 +1,30 @@
 package main
 
 func minDepth(root *TreeNode) int {
-    if root == nil {
-        return 0
-    }
-    return minDepthHelper(root,1)
+    return minDepthHelper(root, 0)
 }
 
-func minDepthHelper(root *TreeNode , height int) int {
+func minDepthHelper(root *TreeNode, depth int) int {
     if root == nil {
-        return height -1
+        return depth
     }
     if root.Left != nil && root.Right != nil{
-        return min(minDepthHelper(root.Left, height + 1), minDepthHelper(root.Right , height + 1))
-    }   else {
-        return max(minDepthHelper(root.Left, height + 1), minDepthHelper(root.Right , height + 1))
+        return min(minDepthHelper(root.Left, depth),minDepthHelper(root.Right, depth)) + 1
+    } else if root.Left == nil {
+        return minDepthHelper(root.Right, depth) + 1
+    } else if root.Right == nil{
+        return minDepthHelper(root.Left, depth) + 1
+    } else {
+        return depth
     }
 }
+
+// func min(a, b int) int{
+//     if a < b{
+//         return a
+//     }
+//     return b
+// }
 
 // func min(a, b int) int{
 //     if a < b{
