@@ -5,16 +5,16 @@ func countNodes(root *TreeNode) int {
     if root == nil {
         return res
     }
-    helper(root, &res)
+    countNodesHelper(root, &res)
    
     return res
 }
 
-func helper(root *TreeNode, res *int){
+func countNodesHelper(root *TreeNode, res *int){
     if root == nil {
         return
     }
     *res++
-    helper(root.Left, res)
-    helper(root.Right, res)
+    countNodesHelper(root.Left, res)
+    countNodesHelper(root.Right, res)
 }
