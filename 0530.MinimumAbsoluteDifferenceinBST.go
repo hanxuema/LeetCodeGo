@@ -1,5 +1,9 @@
 package main
 
+import (
+	"math"
+)
+
 func getMinimumDifference(root *TreeNode) int {
     if root == nil {
         return 0
