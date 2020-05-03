@@ -36,16 +36,17 @@ func main() {
 	// intervals := [][]int{{1,2},{3,5},{6,7},{8,10},{12,16}}
 	// newInterval := []int{4,8}
 	// insert(intervals, newInterval)
-	nums := []int{3, 2, 3}
+	//nums := []int{1, 2, 3}
 	// target := 3
 	// //search(nums, target)
 	// //searchRange(nums,target)
 	// bsearch(nums, target)
-	majorityElement(nums)
- 
-	treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4} 
-	tree := convertArrayToTree(treeArray)
-	isBalanced(tree)
+	//majorityElement(nums)
+	// subsets(nums)
+	getPermutation(3,3)
+	// treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4} 
+	// tree := convertArrayToTree(treeArray)
+	// isBalanced(tree)
 }
 
 func convertArrayToTree(arr []int) *TreeNode{
