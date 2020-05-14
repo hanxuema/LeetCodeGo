@@ -2,11 +2,11 @@ package main
 
 func subsets(nums []int) [][]int {
     res := make([][]int, 0)
-    backtrack(nums, nil, 0, &res)
+    backtrack078(nums, nil, 0, &res)
     return res
 }
 
-func backtrack(nums []int, cur []int, start int, res *[][]int) { 
+func backtrack078(nums []int, cur []int, start int, res *[][]int) { 
     dc := make([]int, len(cur))
     copy(dc, cur)
     *res = append(*res, dc)
