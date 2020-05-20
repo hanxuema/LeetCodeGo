@@ -1,10 +1,13 @@
 package main
- 
+
+import "fmt"
+
 type TreeNode struct {
-	     Val int
-     Left *TreeNode
-	     Right *TreeNode
- }
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 func main() {
 	// 	[0,1,2]
 	// 0
@@ -43,13 +46,20 @@ func main() {
 	// bsearch(nums, target)
 	//majorityElement(nums)
 	// subsets(nums)
-	getPermutation(3,3)
-	// treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4} 
+	//countNumbersWithUniqueDigits(3)
+	// treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4}
 	// tree := convertArrayToTree(treeArray)
 	// isBalanced(tree)
+	partition131("aab")
+	fmt.Printf("a %+v\n", 'a')
+	fmt.Printf("z %+v\n", 'z')
+	fmt.Printf("A %+v\n", 'A')
+	fmt.Printf("Z %+v\n", 'Z')
+	fmt.Printf("1 %+v\n", '1')
+	fmt.Printf("9 %+v\n", '9')
 }
 
-func convertArrayToTree(arr []int) *TreeNode{
+func convertArrayToTree(arr []int) *TreeNode {
 	// [1,2,2,3,null,null,3,4,null,null,4]
 	root := TreeNode{}
 	root.Val = arr[0]
@@ -59,14 +69,14 @@ func convertArrayToTree(arr []int) *TreeNode{
 	return &root
 }
 
-func convertToTreeHelper(arr []int, index int) *TreeNode{
-	if 	index > len(arr) - 1 || arr[index] == -1{
+func convertToTreeHelper(arr []int, index int) *TreeNode {
+	if index > len(arr)-1 || arr[index] == -1 {
 		return nil
 	}
 	root := TreeNode{}
 	root.Val = arr[index]
-	root.Left = convertToTreeHelper(arr,index *2 +1 )
-	root.Right = convertToTreeHelper(arr, index *2 +2)
+	root.Left = convertToTreeHelper(arr, index*2+1)
+	root.Right = convertToTreeHelper(arr, index*2+2)
 
 	return &root
 }
