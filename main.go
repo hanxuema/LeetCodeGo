@@ -50,6 +50,7 @@ func main() {
 	// treeArray := []int{1,2,2,3,-1,-1,3,4,-1,-1,4}
 	// tree := convertArrayToTree(treeArray)
 	// isBalanced(tree)
+	countArrangement(3)
 	partition131("aab")
 	fmt.Printf("a %+v\n", 'a')
 	fmt.Printf("z %+v\n", 'z')
