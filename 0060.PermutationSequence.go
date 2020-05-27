@@ -1,28 +1,41 @@
 package main
 
-import (
-	"strconv"
-)
+import "fmt"
 
 func getPermutation(n int, k int) string {
-	res := make([]string, n+1)
-	backtrack60(n, 1, "", &res)
-	return res[k]
+	per := make([]int, n)
+	for i := 0; i < n; i++ {
+		per[i] = i + 1
+	}
+	fmt.Printf("per %+v\n", per)
+	res := [][]int{}
+	cur := []int{}
+	visited := make([]bool, n)
+	backtrack60(per, visited, cur, &res)
+
+	fmt.Printf("res %+v\n", res)
+	return "A"
+	//return res[k]
 }
 
-func backtrack60(n int, start int, cur string, res *[]string) {
-	if len(cur) == n {
-		// dc = make([]string, len(cur))
-		// copy(dc, cur)
-		// *res = append(*res, dc)
-		// return
-		*res = append(*res, cur)
+func backtrack60(per []int, visited []bool, cur []int, res *[][]int) {
+	if len(cur) == len(per) {
+		dc := make([]int, len(cur))
+		fmt.Printf("cur %+v\n", cur)
+		copy(dc, cur)
+		fmt.Printf("dc %+v\n", dc)
+		*res = append(*res, dc)
+		return
 	}
 
-	for i := start; i <= n; i++ {
-
-		cur += strconv.Itoa(i)
-		backtrack60(n, i+1, cur, res)
+	for i := 0; i < len(per); i++ {
+		if visited[i] {
+			continue
+		}
+		cur = append(cur, per[i])
+		visited[i] = true
+		backtrack60(per, visited, cur, res)
+		visited[i] = false
 		cur = cur[:len(cur)-1]
 	}
 }
