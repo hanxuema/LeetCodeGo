@@ -16,7 +16,6 @@ func isPalindrome(x int) bool {
         if num < -2147483648 || num > 2147483647{
             return false
         }
-    }
-    fmt.Println(num)
+    } 
     return num == origin
 }
