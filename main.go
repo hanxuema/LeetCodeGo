@@ -51,7 +51,13 @@ func main() {
 	// tree := convertArrayToTree(treeArray)
 	// isBalanced(tree)
 	//countArrangement(3)
-	getPermutation(3, 3)
+	a := [][]byte{}
+	a = append(a, []byte{'o', 'a', 'a', 'n'})
+	a = append(a, []byte{'e', 't', 'a', 'e'})
+	a = append(a, []byte{'i', 'h', 'k', 'r'})
+	a = append(a, []byte{'i', 'f', 'l', 'v'})
+	words := []string{"oath","pea","eat","rain"}
+	findWords(a,words)
 	fmt.Printf("a %+v\n", 'a')
 	fmt.Printf("z %+v\n", 'z')
 	fmt.Printf("A %+v\n", 'A')
