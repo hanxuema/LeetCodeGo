@@ -51,19 +51,20 @@ func main() {
 	// tree := convertArrayToTree(treeArray)
 	// isBalanced(tree)
 	//countArrangement(3)
-	a := [][]byte{}
-	a = append(a, []byte{'o', 'a', 'a', 'n'})
-	a = append(a, []byte{'e', 't', 'a', 'e'})
-	a = append(a, []byte{'i', 'h', 'k', 'r'})
-	a = append(a, []byte{'i', 'f', 'l', 'v'})
-	words := []string{"oath","pea","eat","rain"}
-	findWords(a,words)
-	fmt.Printf("a %+v\n", 'a')
-	fmt.Printf("z %+v\n", 'z')
-	fmt.Printf("A %+v\n", 'A')
-	fmt.Printf("Z %+v\n", 'Z')
-	fmt.Printf("1 %+v\n", '1')
-	fmt.Printf("9 %+v\n", '9')
+	// a := [][]byte{}
+	// a = append(a, []byte{'o', 'a', 'a', 'n'})
+	// a = append(a, []byte{'e', 't', 'a', 'e'})
+	// a = append(a, []byte{'i', 'h', 'k', 'r'})
+	// a = append(a, []byte{'i', 'f', 'l', 'v'})
+	// words := []string{"oath","pea","eat","rain"}
+	// findWords(a,words)
+	// fmt.Printf("a %+v\n", 'a')
+	// fmt.Printf("z %+v\n", 'z')
+	// fmt.Printf("A %+v\n", 'A')
+	// fmt.Printf("Z %+v\n", 'Z')
+	// fmt.Printf("1 %+v\n", '1')
+	// fmt.Printf("9 %+v\n", '9')
+	fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
 }
 
 func convertArrayToTree(arr []int) *TreeNode {
