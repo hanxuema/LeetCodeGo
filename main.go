@@ -64,8 +64,9 @@ func main() {
 	// fmt.Printf("Z %+v\n", 'Z')
 	// fmt.Printf("1 %+v\n", '1')
 	// fmt.Printf("9 %+v\n", '9')
-	fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
-	fmt.Println(uniquePaths(3,2))
+	// fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
+	// fmt.Println(uniquePaths(3,2))
+	fmt.Println(findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1}))
 }
 
 func convertArrayToTree(arr []int) *TreeNode {
