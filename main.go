@@ -64,7 +64,8 @@ func main() {
 	// fmt.Printf("Z %+v\n", 'Z')
 	// fmt.Printf("1 %+v\n", '1')
 	// fmt.Printf("9 %+v\n", '9')
-	fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
+	// fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
+	fmt.Println(addDigits(38))
 }
 
 func convertArrayToTree(arr []int) *TreeNode {
