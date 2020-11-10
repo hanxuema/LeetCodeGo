@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -66,7 +64,7 @@ func main() {
 	// fmt.Printf("9 %+v\n", '9')
 	// fmt.Println(longestCommonPrefix([]string{"aaa", "aa", "aaa"}))
 	// fmt.Println(uniquePaths(3,2))
-	fmt.Println(sortedSquares([]int{-3, 0, 2}))
+	duplicateZeros([]int{1, 0, 2, 3, 0, 4, 5, 0})
 }
 
 func convertArrayToTree(arr []int) *TreeNode {
